@@ -1,5 +1,14 @@
 import os
 import requests
+# Change the current working directory to '/content'
+os.chdir('/content')
+
+# Check if the directory already exists and remove it if it does
+if os.path.exists('gaussian-splatting'):
+    subprocess.run(['rm', '-rf', 'gaussian-splatting'])
+
+# Clone the repository from GitHub
+subprocess.run(['git', 'clone', '--recursive', 'https://github.com/camenduru/gaussian-splatting'])
 
 # Define the directory where the repo is cloned
 directory = '/content/gaussian-splatting'
